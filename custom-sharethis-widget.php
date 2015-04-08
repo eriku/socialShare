@@ -36,14 +36,30 @@ class sharethis_widget extends WP_Widget {
 			$shareSiteFacebook = esc_attr($instance['share_site_facebook']);
 			$shareSiteGooglePlus = esc_attr($instance['share_site_googleplus']);
 			$shareSiteTwitter = esc_attr($instance['share_site_twitter']);
+			$shareSiteTwitterUsername = esc_attr($instance['share_site_twitter_username']);
 			$shareSiteLinkedin = esc_attr($instance['share_site_linkedin']);
+			$shareSitePinterest = esc_attr($instance['share_site_pinterest']);
+			$shareSiteTumblr = esc_attr($instance['share_site_tumblr']);
+			$shareSiteBuffer = esc_attr($instance['share_site_buffer']);
+			$shareSiteDigg = esc_attr($instance['share_site_digg']);
+			$shareSiteReddit = esc_attr($instance['share_site_reddit']);
+			$shareSiteStumbleupon = esc_attr($instance['share_site_stumbleupon']);
+			$shareSiteDelicious = esc_attr($instance['share_site_delicious']);
 		} else {
 			$share_title = '';
 			$shareType = '';
 			$shareSiteFacebook = '';
 			$shareSiteGooglePlus = '';
 			$shareSiteTwitter = '';
+			$shareSiteTwitterUsername = '';
 			$shareSiteLinkedin = '';
+			$shareSitePinterest = '';
+			$shareSiteTumblr = '';
+			$shareSiteBuffer = '';
+			$shareSiteDigg = '';
+			$shareSiteReddit = '';
+			$shareSiteStumbleupon = '';
+			$shareSiteDelicious = '';
 		}
 		?>
 
@@ -80,6 +96,11 @@ class sharethis_widget extends WP_Widget {
 				Google Plus
 			</label><br/>
 			
+			<label for"<?php echo $this->get_field_id('share_site_twitter_username'); ?>">
+				Twitter Username<br/>
+				<input id="<?php echo $this->get_field_id('share_site_twitter_username') ?>" name="<?php echo $this->get_field_name('share_site_twitter_username'); ?>" type="text" value="<?php echo $shareSiteTwitterUsername; ?>" class="textfield" />
+			</label><br/>
+
 			<label for="<?php echo $this->get_field_id('share_site_twitter'); ?>">
 				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_twitter'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_twitter'); ?>" name="<?php echo $this->get_field_name('share_site_twitter'); ?>" /> 
 				Twitter
@@ -88,7 +109,42 @@ class sharethis_widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('share_site_linkedin'); ?>">
 				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_linkedin'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_linkedin'); ?>" name="<?php echo $this->get_field_name('share_site_linkedin'); ?>" /> 
 				LinkedIn
-			</label>
+			</label><br/>
+
+			<label for="<?php echo $this->get_field_id('share_site_pinterest'); ?>">
+				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_pinterest'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_pinterest'); ?>" name="<?php echo $this->get_field_name('share_site_pinterest'); ?>" /> 
+				Pinterest
+			</label><br/>
+
+			<label for="<?php echo $this->get_field_id('share_site_tumblr'); ?>">
+				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_tumblr'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_tumblr'); ?>" name="<?php echo $this->get_field_name('share_site_tumblr'); ?>" /> 
+				Tumblr
+			</label><br/>
+
+			<label for="<?php echo $this->get_field_id('share_site_buffer'); ?>">
+				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_buffer'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_buffer'); ?>" name="<?php echo $this->get_field_name('share_site_buffer'); ?>" /> 
+				Buffer
+			</label><br/>
+
+			<label for="<?php echo $this->get_field_id('share_site_digg'); ?>">
+				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_digg'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_digg'); ?>" name="<?php echo $this->get_field_name('share_site_digg'); ?>" /> 
+				Digg
+			</label><br/>
+
+			<label for="<?php echo $this->get_field_id('share_site_reddit'); ?>">
+				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_reddit'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_reddit'); ?>" name="<?php echo $this->get_field_name('share_site_reddit'); ?>" /> 
+				Reddit
+			</label><br/>
+
+			<label for="<?php echo $this->get_field_id('share_site_stumbleupon'); ?>">
+				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_stumbleupon'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_stumbleupon'); ?>" name="<?php echo $this->get_field_name('share_site_stumbleupon'); ?>" /> 
+				StumbleUpon
+			</label><br/>
+
+			<label for="<?php echo $this->get_field_id('share_site_delicious'); ?>">
+				<input class="checkbox" type="checkbox" <?php checked($instance['share_site_delicious'], 'on'); ?> id="<?php echo $this->get_field_id('share_site_delicious'); ?>" name="<?php echo $this->get_field_name('share_site_delicious'); ?>" /> 
+				Delicious
+			</label><br/>
 		</p>
 		<?php
 	}
@@ -103,7 +159,15 @@ class sharethis_widget extends WP_Widget {
 		$instance['share_site_facebook'] = strip_tags($new_instance['share_site_facebook']);
 		$instance['share_site_googleplus'] = strip_tags($new_instance['share_site_googleplus']);
 		$instance['share_site_twitter'] = strip_tags($new_instance['share_site_twitter']);
+		$instance['share_site_twitter_username'] = strip_tags($new_instance['share_site_twitter_username']);
 		$instance['share_site_linkedin'] = strip_tags($new_instance['share_site_linkedin']);
+		$instance['share_site_pinterest'] = strip_tags($new_instance['share_site_pinterest']);
+		$instance['share_site_tumblr'] = strip_tags($new_instance['share_site_tumblr']);
+		$instance['share_site_buffer'] = strip_tags($new_instance['share_site_buffer']);
+		$instance['share_site_digg'] = strip_tags($new_instance['share_site_digg']);
+		$instance['share_site_reddit'] = strip_tags($new_instance['share_site_reddit']);
+		$instance['share_site_stumbleupon'] = strip_tags($new_instance['share_site_stumbleupon']);
+		$instance['share_site_delicious'] = strip_tags($new_instance['share_site_delicious']);
 		return $instance;
 	}
 
@@ -117,15 +181,53 @@ class sharethis_widget extends WP_Widget {
 		$share_facebook = $instance['share_site_facebook'];
 		$share_googleplus = $instance['share_site_googleplus'];
 		$share_twitter = $instance['share_site_twitter'];
+		$share_twitter_username = $instance['share_site_twitter_username'];
 		$share_linkedin = $instance['share_site_linkedin'];
+		$share_pinterest = $instance['share_site_pinterest'];
+
+		$share_tumblr = $instance['share_site_tumblr'];
+		$share_buffer = $instance['share_site_buffer'];
+		$share_digg = $instance['share_site_digg'];
+		$share_reddit = $instance['share_site_reddit'];
+		$share_stumbleupon = $instance['share_site_stumbleupon'];
+		$share_delicious = $instance['share_site_delicious'];
 
 		wp_enqueue_script( 'sharethis-style', plugins_url('custom-sharethis-widget.js', __FILE__) );
 
+		$hashtags = 'Vancouver';
+		$link = urlencode(get_the_permalink());
+		$title = urlencode(get_the_title());
+		$url = urlencode(get_bloginfo('url'));
+		$desc = urlencode(strip_tags(custom_excerpt(35, false, false)));
+		
+		// Image
+		$image = false;
+		if ( isset(get_field('hero_images')[0]['hero_image']) && get_the_ID() ) {
+			$heroes = get_field('hero_images');
+		} else if ( is_home() ) {
+			$heroes = get_field('hero_images', 'option');
+		}
+		if ($heroes) {
+			$image = $heroes[0]['hero_image']['url'];
+		} elseif ( has_post_thumbnail() && !is_archive() ) {
+			$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
+			$image = $image[0];
+		} else {
+			$image = get_bloginfo('template_url') . '/images/og-logo.png';
+		}
+
 		$urls = array(
-			'facebook' => 'http://www.facebook.com/sharer/sharer.php?u=' . urlencode(get_the_permalink()),
-			'twitter' => 'http://twitter.com/share?text=' . urlencode(get_the_title() . ' from @vaneconomic') . '&url=' . urlencode(get_the_permalink()) . '&hashtags=vancouver',
-			'linkedin' => 'https://www.linkedin.com/shareArticle?mini=true&url=' . urlencode(get_the_permalink()) . '&title=' . urlencode(get_the_title()) . '&source=' . urlencode(get_bloginfo('url')) . '&summary=' . urlencode(strip_tags(custom_excerpt(35, false, false))),
-			'googleplus' => 'https://plus.google.com/share?url=' . urlencode(get_the_permalink()) . '&appkey=&title=' . urlencode(get_the_title())
+			'facebook' => 'http://www.facebook.com/sharer/sharer.php?u=' . $link,
+			'googleplus' => 'https://plus.google.com/share?url=' . $link . '&amp;appkey=&title=' . $title,
+			'twitter' => 'https://twitter.com/share?url=' . $link . '&amp;text=' . $title . '&amp;via=' . $share_twitter_username . '&amp;hashtags=' . $hashtags,
+			'linkedin' => 'https://www.linkedin.com/shareArticle?mini=true&url=' . $link . '&amp;title=' . $title . '&amp;source=' . $url . '&amp;summary=' . $desc,
+			'pinterest' => 'https://pinterest.com/pin/create/bookmarklet/?url=' . $link . '&amp;image=' . $image . '&amp;description=' . $title,
+			'tumblr' => 'http://www.tumblr.com/share/link?url=' . $link . '&amp;name=' . $title . '&amp;description=' . $desc,
+			'buffer' => 'http://bufferapp.com/add?text=' . $title . '&url=' . $link . '',
+			'digg' => 'http://digg.com/submit?url=' . $link . '&title=' . $title,
+			'reddit' => 'http://reddit.com/submit?url=' . $link . '&title=' . $title,
+			'stumbleupon' => 'http://www.stumbleupon.com/submit?url=' . $link . '&title=' . $title,
+			'delicious' => 'https://delicious.com/save?v=5&provider={provider}&noui&jump=close&url=' . $link . '&title=' . $title
 		);
 
 		echo $before_widget;
@@ -144,6 +246,27 @@ class sharethis_widget extends WP_Widget {
 				<?php endif; ?>
 				<?php if ( $share_linkedin ) : ?>
 					<li class="social-share-li"><a href="<?php echo $urls['linkedin'] ?>" class="social-share-item js-share_link linkedin" data-vec-share-site="LinkedIn">LinkedIn</a></li>
+				<?php endif; ?>
+				<?php if ( $share_pinterest ) : ?>
+					<li class="social-share-li"><a href="<?php echo $urls['pinterest'] ?>" class="social-share-item js-share_link pinterest" data-vec-share-site="Pinterest">Pinterest</a></li>
+				<?php endif; ?>
+				<?php if ( $share_tumblr ) : ?>
+					<li class="social-share-li"><a href="<?php echo $urls['tumblr'] ?>" class="social-share-item js-share_link tumblr" data-vec-share-site="tumblr">tumblr</a></li>
+				<?php endif; ?>
+				<?php if ( $share_buffer ) : ?>
+					<li class="social-share-li"><a href="<?php echo $urls['buffer'] ?>" class="social-share-item js-share_link buffer" data-vec-share-site="buffer">buffer</a></li>
+				<?php endif; ?>
+				<?php if ( $share_digg ) : ?>
+					<li class="social-share-li"><a href="<?php echo $urls['digg'] ?>" class="social-share-item js-share_link digg" data-vec-share-site="digg">digg</a></li>
+				<?php endif; ?>
+				<?php if ( $share_reddit ) : ?>
+					<li class="social-share-li"><a href="<?php echo $urls['reddit'] ?>" class="social-share-item js-share_link reddit" data-vec-share-site="reddit">reddit</a></li>
+				<?php endif; ?>
+				<?php if ( $share_stumbleupon ) : ?>
+					<li class="social-share-li"><a href="<?php echo $urls['stumbleupon'] ?>" class="social-share-item js-share_link stumbleupon" data-vec-share-site="stumbleupon">stumbleupon</a></li>
+				<?php endif; ?>
+				<?php if ( $share_delicious ) : ?>
+					<li class="social-share-li"><a href="<?php echo $urls['delicious'] ?>" class="social-share-item js-share_link delicious" data-vec-share-site="delicious">delicious</a></li>
 				<?php endif; ?>
 			</ul>
 		</div>
