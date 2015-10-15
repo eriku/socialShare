@@ -1,3 +1,3 @@
-# Simple social share ode #
+# Simple social share code #
 
-## This doesn't use any third party scripts! ##
+_This code doesn't use any third party scripts! So no adware or slow page loading!!_
