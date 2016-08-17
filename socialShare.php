@@ -9,7 +9,7 @@
   $urls = array(
     'facebook' => 'http://www.facebook.com/sharer/sharer.php?u=' . $link,
     'googleplus' => 'https://plus.google.com/share?url=' . $link . '&amp;appkey=&title=' . $title,
-    'twitter' => 'https://twitter.com/share?url=' . $link . '&amp;text=' . $title . '&amp;via=' . $twitterUsername . '&amp;hashtags=' . $hashtags,
+    'twitter' => 'https://twitter.com/intent/tweet?text=' . $title . ' ' . $link,
     'linkedin' => 'https://www.linkedin.com/shareArticle?mini=true&url=' . $link . '&amp;title=' . $title . '&amp;source=' . $url . '&amp;summary=' . $desc,
     'pinterest' => 'https://pinterest.com/pin/create/bookmarklet/?url=' . $link . '&amp;image=' . $image . '&amp;description=' . $title,
     'tumblr' => 'http://www.tumblr.com/share/link?url=' . $link . '&amp;name=' . $title . '&amp;description=' . $desc,
